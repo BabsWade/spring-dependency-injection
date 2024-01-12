@@ -26,7 +26,7 @@ public class HelloWorldApplication implements CommandLineRunner{
 		
 		
 		// Appel d'une méthode du service pour obtenir une instance de Helloworld.
-		Helloworld hw = bs.getHelloworld();
+		/**Helloworld hw = bs.getHelloworld();
 		System.out.println(hw);
 		
 		// Ajoutez des messages de journalisation pour suivre le flux d'exécution.
@@ -35,7 +35,18 @@ public class HelloWorldApplication implements CommandLineRunner{
 	    Helloworld hw1 = bs.getHelloworld();
 	    System.out.println(hw1);
 	    
-	    log.info("Fin de l'exécution de la méthode run.");
+	    log.info("Fin de l'exécution de la méthode run.");**/
+		
+		if (bs != null) {
+	        Helloworld hw = bs.getHelloworld();
+	        if (hw != null) {
+	            System.out.println(hw);
+	        } else {
+	            log.error("Le service BusinessService a renvoyé une instance de Helloworld nulle.");
+	        }
+	    } else {
+	        log.error("Le service BusinessService est null.");
+	    }
 		
 	}
 	
