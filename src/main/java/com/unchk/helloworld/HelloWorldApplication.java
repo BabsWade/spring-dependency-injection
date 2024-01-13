@@ -37,7 +37,7 @@ public class HelloWorldApplication implements CommandLineRunner{
 	    
 	    log.info("Fin de l'exécution de la méthode run.");**/
 		
-		if (bs != null) {
+		/**if (bs != null) {
 	        Helloworld hw = bs.getHelloworld();
 	        if (hw != null) {
 	            System.out.println(hw);
@@ -46,6 +46,13 @@ public class HelloWorldApplication implements CommandLineRunner{
 	        }
 	    } else {
 	        log.error("Le service BusinessService est null.");
+	    }**/
+		//Gestion des exceptions
+		try {
+	        Helloworld hw = bs.getHelloworld();
+	        System.out.println(hw);
+	    } catch (Exception e) {
+	        log.error("Une erreur s'est produite lors de l'exécution de la méthode run.", e);
 	    }
 		
 	}
