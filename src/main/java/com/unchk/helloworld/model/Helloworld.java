@@ -4,17 +4,15 @@ package com.unchk.helloworld.model;
  * Modèle représentant un message "Hello World".
  */
 public class Helloworld {
-private String value = "hello world";
+	private String value;
 
-public String getValue() {
-	return value;
-}
+    public Helloworld() {
+        this.value = "hello world";
+    }
 
-public void setValue(String value) {
-	this.value = value;
-}
-@Override
-public String toString() {
-	return value;
-}
+    public Helloworld(String value) {
+        this.value = value;
+    }
+
+
 }
